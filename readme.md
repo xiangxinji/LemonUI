@@ -44,6 +44,13 @@
 
 当前没有存放至 Npm 中, 也只供本人学习,练习作用 ,在本地上 npm link 这个项目, 本人测试成功的 
 
+main.js中  
+```javascript
+import LemonUI from 'lemon-ui' ; 
+import 'lemon-ui/dist/index.css';
+Vue.use(LemonUI) 
+```
+以上使用即可,与ElementUI相同 
 
 
 ## 20-7-15
