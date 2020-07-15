@@ -1,5 +1,5 @@
 <template>
-  <div class="sinte-link">
+  <div class="lemon-link">
     这是link标签
   </div>
 </template>

@@ -17,7 +17,7 @@ module.exports = {
   output: {
     path: outputPath,
     filename: outputFileName,
-    library: "Sinte",
+    library: "LemonUI",
     // 打包目标为 umd (es6,cjs,script,amd)
     libraryTarget: "umd",
     // 默认以.default导出

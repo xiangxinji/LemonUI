@@ -1,5 +1,5 @@
 <template>
-  <div class="sinte-button">
+  <div class="lemon-button">
       这是button 组件
   </div>
 </template>
