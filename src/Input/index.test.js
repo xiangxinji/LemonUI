@@ -10,6 +10,6 @@ function getMountedComponent(Component, propsData) {
 describe("checked", () => {
   it("case one ", () => {
     const wrapper = getMountedComponent(Comp, {});
-    expect(wrapper.text()).toEqual('这是link标签');
+    expect(wrapper.text()).toEqual('这是一个input 组件');
   });
 });
