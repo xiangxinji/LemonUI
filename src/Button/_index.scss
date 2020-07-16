@@ -13,7 +13,6 @@
     white-space: nowrap;
     transition: box-shadow 0.2s;
 
-
     &.button-type-default:active{
         box-shadow: 0px 0px 3px lighten($primary, 1%);
     }

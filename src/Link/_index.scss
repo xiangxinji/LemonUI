@@ -1,3 +1,29 @@
-.lemon-link{
-    color:red ; 
+.lemon__link {
+    span {
+        font-size: $link-font-size;
+        font-weight: $link-font-weight;
+        font-family: $link-font-family;
+        color: $gray-900;
+        padding: $link-padding-y $link-padding-y;
+    }
+    cursor: pointer;
+    @each $type, $color in $theme-colors {
+        &.link-type-#{$type} span {
+            color: $color;
+        }
+    }
+    &.link-underline span:hover {
+        text-decoration: underline !important;
+    }
+    &:hover {
+        opacity: 0.8;
+    }
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    :active {
+        text-decoration: none;
+        color: inherit;
+    }
 }

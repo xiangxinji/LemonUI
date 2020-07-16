@@ -1,12 +1,14 @@
 <template>
   <div>
-    <Link />
-    <lm-input></lm-input>
-    <hr />
-    <lm-button native-type="submit">添加信息</lm-button>
-
-    <lm-button type="info" round size="small">爱斯达克加速度垃圾可适当拉卡时间段逻辑</lm-button>
-    <lm-button type="warning" round size="mini">爱斯达克加速度垃圾可适当拉卡时间段逻辑</lm-button>
+    <h2>
+      link
+    </h2>
+    <hr>
+    <Link >默认链接</Link>
+    <Link type="primary" >主要链接</link>
+    <Link type="danger" >错误链接</link>
+    <Link type="warning" >警告链接</link>
+    <Link type="info" >信息链接</link>
   </div>
 </template>
 

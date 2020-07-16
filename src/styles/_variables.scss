@@ -222,6 +222,17 @@ $btn-border-radius-sm: $border-radius-sm !default;
 $btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out !default;
 
+// 链接
+$link-text-color: $gray-900;
+$link-padding-x: 0.1rem !default;
+$link-padding-y: 0.3rem !default;
+$link-font-weight: 400;
+$link-font-family: $font-family-base !default;
+$link-font-size: $font-size-base !default;
+$link-line-height: $line-height-base !default;
+
+
+
 // menu
 $menu-border-width: $border-width !default;
 $menu-border-color: $border-color !default;
