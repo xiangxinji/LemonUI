@@ -10,7 +10,8 @@
   "scripts": {
     "test": "jest",
     "dev": "webpack-dev-server --config build/dev.js",
-    "build": "webpack --config build/build.js"
+    "build": "webpack --config build/build.js" , 
+    "preview" :"npm run dev"
   },
   "keywords": [],
   "author": "",

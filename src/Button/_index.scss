@@ -1,1 +1,56 @@
-.lemon-button{color:blue}
+.lemon__button {
+    @include button-types($gray-900, white, $border-color);
+    padding: $btn-padding-y $btn-padding-x;
+    border-radius: $border-radius;
+    font-family: $btn-font-family;
+    font-size: $btn-font-size;
+    font-weight: $btn-font-weight;
+    line-height: $btn-line-height;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: $btn-border-radius;
+    outline: none !important;
+    white-space: nowrap;
+    transition: box-shadow 0.2s;
+
+
+    &.button-type-default:active{
+        box-shadow: 0px 0px 3px lighten($primary, 1%);
+    }
+    // 根据不同的样式 , 增加点击效果
+    @each $type,$val in $theme-colors {
+        &.button-type-#{$type}:active {
+            box-shadow: 0px 0px 3px lighten($val, 1%);
+        }
+    }
+
+    // 样式
+    &.button-type-primary {
+        @include button-types($white, $primary, $primary);
+    }
+    &.button-type-success {
+        @include button-types($white , $success , $success)
+    }
+    &.button-type-danger {
+        @include button-types($white , $danger , $danger)
+    }
+    &.button-type-warning {
+       
+        @include button-types($white , $warning , $warning)
+    }
+    &.button-type-info {
+        @include button-types($white , $info , $info)
+    }
+  
+    // 尺寸
+    &.button-size-small {
+        @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm);
+    }
+    &.button-size-mini {
+        @include button-size($btn-padding-y-mn, $btn-padding-x-mn, $btn-font-size-mn);
+    }
+    // 圆角
+    &.button-round {
+        border-radius: $btn-round-radius;
+    }
+}
