@@ -15,7 +15,7 @@ const components = {
 export default {
   install(Vue) {
     Object.keys(components).forEach(function(key) {
-      Vue.component("si-" + key.toLowerCase(), components[key]);
+      Vue.component("le-" + key.toLowerCase(), components[key]);
     });
   },
 };
