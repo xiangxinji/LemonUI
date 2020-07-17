@@ -11,7 +11,7 @@ export default {
     size: {
       type: String,
       validator(val) {
-        const sizes = ["medium ", "small ", "mini"];
+        const sizes = ["medium", "small", "mini"];
         return sizes.includes(val);
       },
       default: "medium"

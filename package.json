@@ -10,8 +10,8 @@
   "scripts": {
     "test": "jest",
     "dev": "webpack-dev-server --config build/dev.js",
-    "build": "webpack --config build/build.js" , 
-    "preview" :"npm run dev"
+    "build": "webpack --config build/build.js",
+    "preview": "npm run dev"
   },
   "keywords": [],
   "author": "",
@@ -44,6 +44,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^0.1.10",
     "vue": "^2.6.11"
   },
   "jest": {
