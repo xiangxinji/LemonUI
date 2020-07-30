@@ -1,6 +1,5 @@
 <template>
-  <button @click="$emit('click')"
-  :class="wrapperClasses" v-bind="$attrs" :type="nativeType">
+  <button @click="$emit('click')" :class="wrapperClasses" v-bind="$attrs" :type="nativeType">
     <slot></slot>
   </button>
 </template>
@@ -12,26 +11,26 @@ export default {
     size: {
       type: String,
       validator(val) {
-        const sizes = ['medium', 'small', 'mini'];
+        const sizes = ["medium", "small", "mini"];
         return sizes.includes(val);
       },
-      default: 'medium',
+      default: "medium",
     },
     // 类型
     type: {
       type: String,
       validator(val) {
         const types = [
-          'default',
-          'primary',
-          'success',
-          'warning',
-          'danger',
-          'info',
+          "default",
+          "primary",
+          "success",
+          "warning",
+          "danger",
+          "info",
         ];
         return types.includes(val);
       },
-      default: 'default',
+      default: "default",
     },
     // 是否变成圆形按钮
     circle: {
@@ -52,7 +51,7 @@ export default {
     nativeType: {
       type: String,
       validator(val) {
-        const types = ['button', 'submit', 'reset'];
+        const types = ["button", "submit", "reset"];
         return types.includes(val);
       },
     },
@@ -64,9 +63,9 @@ export default {
         lemon__button: true,
         [`button-type-${this.type}`]: true,
         [`button-size-${this.size}`]: true,
-        'button-disabled': this.disabled,
-        'button-round': this.round,
-        'button-circle': this.circle,
+        "button-disabled": this.disabled,
+        "button-round": this.round,
+        "button-circle": this.circle,
       };
     },
   },

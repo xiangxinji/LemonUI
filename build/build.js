@@ -10,8 +10,11 @@ const {
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const WebpackBundleAnalyzer = require("webpack-bundle-analyzer");
 
-module.exports = {
+const isRunningAnalys = process.env.RUNNING_ANALYS === "YES";
+
+const config = {
   mode: "production",
   entry: entry,
   output: {
@@ -54,3 +57,12 @@ module.exports = {
     new OptimizeCSSAssetsPlugin(),
   ],
 };
+
+module.exports = (({ isRunningAnalys }) => {
+  if (isRunningAnalys) {
+    config.plugins.push(new WebpackBundleAnalyzer.BundleAnalyzerPlugin());
+  }
+  return config;
+})({
+  isRunningAnalys,
+});
