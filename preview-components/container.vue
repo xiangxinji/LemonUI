@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="preview-block">
       <h2>{{ title }} </h2>
@@ -10,10 +8,10 @@
 
 <script>
 export default {
-    props: {
-        title : {
-            type : String 
-        }
-    }
-}
+  props: {
+    title: {
+      type: String,
+    },
+  },
+};
 </script>

@@ -1,12 +1,11 @@
-import "./styles/index.scss";
-
-import Link from "./Link/index.vue";
-import Button from "./Button/index.vue";
+import './styles/index.scss';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-library.add(fas)
+import Link from './Link/index.vue';
+import Button from './Button/index.vue';
 
+library.add(fas);
 
 const components = {
   Link,
@@ -14,8 +13,8 @@ const components = {
 };
 export default {
   install(Vue) {
-    Object.keys(components).forEach(function(key) {
-      Vue.component("le-" + key.toLowerCase(), components[key]);
+    Object.keys(components).forEach((key) => {
+      Vue.component(`le-${key.toLowerCase()}`, components[key]);
     });
   },
 };

@@ -1,26 +1,31 @@
 <template>
   <container title="icon">
-      <lemon-icon color="red" icon="user"></lemon-icon>
-      <lemon-icon icon="car"></lemon-icon>
-      <lemon-icon class="ic" color="skyblue" icon="tree"></lemon-icon>
-      <lemon-icon color="orange" icon="stop"></lemon-icon>
-      <lemon-icon icon="home"></lemon-icon>
+    <lemon-icon color="red" icon="user"></lemon-icon>
+    <lemon-icon icon="car"></lemon-icon>
+    <lemon-icon class="ic" color="skyblue" icon="tree"></lemon-icon>
+    <lemon-icon color="orange" icon="stop"></lemon-icon>
+    <lemon-icon icon="home"></lemon-icon>
+    <lemon-icon icon="times-circle" color="#ccc"></lemon-icon>
+    <lemon-icon icon="check-circle" color="#ccc"></lemon-icon>
+     <lemon-icon icon="info" color="#ccc"></lemon-icon>
+     <lemon-icon icon="exclamation-circle" color="#ccc"></lemon-icon>
   </container>
 </template>
 
 <script>
-import container from './container.vue'
-import LemonIcon from '../src/Icon/index.vue'
+import container from './container.vue';
+import LemonIcon from '../src/Icon/index.vue';
+
 export default {
-    components : {
-        container ,
-        LemonIcon
-    }
-}
+  components: {
+    container,
+    LemonIcon,
+  },
+};
 </script>
 
 <style lang="scss">
-.ic{
-    width:20px;
+.ic {
+  width: 20px;
 }
 </style>
