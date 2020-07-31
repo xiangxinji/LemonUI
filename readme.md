@@ -23,14 +23,12 @@
 这个项目用 Vue2.x 来进行基础框架, 构建配置是采用的 webpack4.x 和 babel 来进行构建 等等 , 因为刚刚开始 主要还是得慢慢完善, 希望自己也能坚持下去 !!! 
 
 
+## 预览图
 
-## preview 
-
-![](https://github.com/xiangxinji/LemonUI/tree/master/images/v1.png)
-
+在images 文件夹中 
 
 
-# 运行 
+## 运行 
 
 在这个项目中目前只有三种功能 , test ,build , dev , 我们来一个一个进行说明 
 
