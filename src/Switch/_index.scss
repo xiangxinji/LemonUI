@@ -1,0 +1,42 @@
+$core-size-w: 40px;
+$core-size-h: 20px;
+$core-default-color: #eee;
+$core-border-radius: 15px;
+
+$core-slide-size: 16px;
+$core-slide-bg: #fff;
+$core-slide-border-radius: 50%;
+.lemon-switch {
+    display: inline-block;
+
+    user-select: none;
+    input[type="checkbox"] {
+        width: 0px;
+        height: 0px;
+    }
+    .lemon-switch__core {
+        cursor: pointer;
+        width: $core-size-w;
+        height: $core-size-h;
+        display: inline-block;
+        background-color: $core-default-color;
+        border-radius: $core-border-radius;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            transition: all 0.3s ease-in-out;
+            width: $core-slide-size;
+            height: $core-slide-size;
+            background-color: $core-slide-bg;
+            border-radius: $core-slide-border-radius;
+            left: 2px;
+        }
+    }
+}
+.is-checked {
+    .lemon-switch__core::after {
+        left: calc(100% - 18px);
+    }
+}

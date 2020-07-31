@@ -3,6 +3,7 @@
     <Lemon-button />
     <lemon-link />
     <lemon-icon />
+    <Lemon-switch />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import LemonButton from './preview-components/button.vue';
 import LemonLink from './preview-components/link.vue';
 import LemonIcon from './preview-components/icon.vue';
+import LemonSwitch from './preview-components/switch.vue';
 
 export default {
   components: {
     LemonButton,
     LemonLink,
     LemonIcon,
+    LemonSwitch,
   },
 };
 </script>
