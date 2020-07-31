@@ -26,7 +26,9 @@
 
 ## preview 
 
-![](./images/v1.png)
+![](https://github.com/xiangxinji/LemonUI/raw/master/images/v1.png)
+
+
 
 # 运行 
 
