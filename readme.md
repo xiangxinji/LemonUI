@@ -26,7 +26,7 @@
 
 ## preview 
 
-![](https://github.com/xiangxinji/LemonUI/raw/master/images/v1.png)
+![](https://github.com/xiangxinji/LemonUI/tree/master/images/v1.png)
 
 
 
