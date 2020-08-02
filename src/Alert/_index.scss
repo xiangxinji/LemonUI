@@ -1,0 +1,63 @@
+// 相关背景颜色
+$alert-theme-colors-light: (
+    "success": #f0f9eb,
+    "info": #f4f4f5,
+    "warning": #fdf6ec,
+    "danger": #fef0f0,
+);
+
+
+$width: 100% ; 
+$padding:8px 16px ; 
+$fontsize : 15px ; 
+$border-radius : 4px ; 
+$overflow : hidden ; 
+$margin:0px  0px 12px 0px ; 
+
+.lemon-alert {
+    width: $width ;
+    padding :$padding ; 
+    font-size: $fontsize; 
+    border-radius: $border-radius ;
+    overflow: $overflow; 
+    position: relative;
+    margin: $margin;
+    display: block;
+    user-select: none;
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    @each $color, $value in $alert-theme-colors-light {
+        &.type__#{$color} {
+            background-color: $value;
+            .title-box {
+                color: map-get($theme-colors, $color);
+            }
+        }
+        // dark 主题
+        &.effect__dark.type__#{$color} {
+            background-color: map-get($theme-colors, $color);
+            .title-box {
+                color: white;
+            }
+        }
+    }
+
+
+
+    // 关闭按钮 
+    .close-wrapper{
+        position: absolute;
+        right:16px ; 
+        top:8px ; 
+        cursor: pointer;
+        user-select: none;
+    }
+    // 居中 
+    &.align__center {
+        align-items: center;
+    }
+
+
+
+
+}
