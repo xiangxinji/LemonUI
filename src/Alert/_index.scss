@@ -29,19 +29,26 @@ $margin:0px  0px 12px 0px ;
     @each $color, $value in $alert-theme-colors-light {
         &.type__#{$color} {
             background-color: $value;
-            .title-box {
+            .title-box,.description-box {
                 color: map-get($theme-colors, $color);
             }
         }
         // dark 主题
         &.effect__dark.type__#{$color} {
             background-color: map-get($theme-colors, $color);
-            .title-box {
+            .title-box,.description-box{
                 color: white;
             }
         }
     }
 
+
+    .title-box{
+        font-size: 16px;
+    }
+    .description-box{
+        font-size: 15px;
+    }
 
 
     // 关闭按钮 
@@ -49,12 +56,13 @@ $margin:0px  0px 12px 0px ;
         position: absolute;
         right:16px ; 
         top:8px ; 
+        color : #ccc;
         cursor: pointer;
         user-select: none;
     }
     // 居中 
     &.align__center {
-        align-items: center;
+        text-align: center;
     }
 
 

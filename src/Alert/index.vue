@@ -1,5 +1,5 @@
 <template>
-  <div :class="wrapperClass" :style="{'opacity': show ? 1 : 0 }">
+  <div :class="wrapperClass" :style="{ opacity: show ? 1 : 0 }">
     <div class="title-box">
       <slot name="title">{{ title }}</slot>
     </div>
@@ -10,7 +10,10 @@
     </div>
 
     <div class="close-wrapper" v-if="closable" @click="show = false">
-      <lemon-icon icon="times" :size="14" color="#ccc"></lemon-icon>
+      <span v-if="closeText">
+        {{ closeText }}
+      </span>
+      <lemon-icon v-else icon="times" :size="14" color="#ccc"></lemon-icon>
     </div>
   </div>
 </template>
@@ -28,6 +31,8 @@ export default {
         setTimeout(() => {
           this.$el.style.display = 'none';
         }, 400);
+      } else {
+        this.$el.style.display = 'block';
       }
     },
   },
@@ -62,7 +67,7 @@ export default {
     // 是否居中
     center: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     // 主题
     effect: {
@@ -71,6 +76,18 @@ export default {
       validator(v) {
         return v === 'light' || v === 'dark';
       },
+    },
+    // 关闭的文字
+    closeText: {
+      type: String,
+    },
+  },
+  methods: {
+    open() {
+      this.show = true;
+    },
+    close() {
+      this.show = false;
     },
   },
   computed: {
