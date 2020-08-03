@@ -8,9 +8,9 @@ export default {
     // 模式 , 水平或者垂直
     mode: {
       type: String,
-      default: "vertical",
+      default: 'vertical',
       validator(v) {
-        return v === "vertical" || v === "horizontal";
+        return v === 'vertical' || v === 'horizontal';
       },
     },
   },
