@@ -1,9 +1,6 @@
-// 语言 
 language: node_js
 node_js:
   - node
-
-// 通知  
 notifications:
   slack:
     if: branch = master
