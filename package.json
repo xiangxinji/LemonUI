@@ -13,7 +13,8 @@
     "build": "npm run lint && webpack --config build/build.js",
     "preview": "npm run dev",
     "lint": "eslint --fix --ext .js,.jsx,.vue src",
-    "build:analyzer": "cross-env NODE_ENV=production RUNNING_ANALYS=YES webpack --config build/build.js"
+    "build:analyzer": "cross-env NODE_ENV=production RUNNING_ANALYS=YES webpack --config build/build.js",
+    "storybook": "start-storybook"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,8 @@
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
+    "@storybook/addon-storysource": "^5.3.19",
+    "@storybook/vue": "^5.3.19",
     "@vue/babel-preset-jsx": "^1.1.2",
     "@vue/test-utils": "^1.0.3",
     "babel-core": "^7.0.0-bridge.0",
@@ -31,6 +34,7 @@
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-vue": "^2.0.2",
     "cross-env": "^7.0.2",
     "dart-sass": "^1.25.0",
     "eslint": "^7.5.0",

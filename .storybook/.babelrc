@@ -1,0 +1,9 @@
+{
+    "presets": ["@vue/babel-preset-jsx"],
+    "env": {
+      "test": {
+        "presets": [["env", { "targets": { "node": "current" } }]]
+      }
+    }
+  }
+  
