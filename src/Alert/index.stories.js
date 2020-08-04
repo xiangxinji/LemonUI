@@ -40,3 +40,13 @@ export const effects = render(`
 export const notClosing = render(`
     <LeAlert effect="dark" :closable="false" type="success" title="这是一个令人深思的结局" description="这一切的一切拥有着紧密的关联!!!"></LeAlert>
 `)
+
+
+export const customerCloseText = render(`
+    <LeAlert close-text="知道了"> 这是一个令人深思的结局 </LeAlert>
+`)
+
+
+export const center = render(`
+    <LeAlert center>这一定是一个无休止的谎言</LeAlert>
+`)

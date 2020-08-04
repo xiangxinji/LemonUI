@@ -9,12 +9,11 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "dev": "webpack-dev-server --config build/dev.js",
     "build": "npm run lint && webpack --config build/build.js",
-    "preview": "npm run dev",
     "lint": "eslint --fix --ext .js,.jsx,.vue src",
     "build:analyzer": "cross-env NODE_ENV=production RUNNING_ANALYS=YES webpack --config build/build.js",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "build-storybook": "build-storybook -c .storybook"
   },
   "keywords": [],
   "author": "",
