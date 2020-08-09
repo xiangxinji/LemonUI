@@ -1,0 +1,11 @@
+.lemon-transition {
+    @include transtion-fade-inlinear(fade-in-linear);
+
+    @include transition-fade-in(fade-in);
+
+    @include transition-zoom-center(zoom-in-center);
+
+    @include transition-zoom-top(zoom-in-top)
+
+}
+ 

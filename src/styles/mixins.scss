@@ -1,18 +1,75 @@
+// 不同的按钮类型
+@mixin button-types($color, $background-color, $border-color, $border-type: solid) {
+  color: $color;
+  background-color: $background-color;
+  border: $border-type 1px $border-color;
+}
 
+// 不同的按钮尺寸
+@mixin button-size($padding-y, $padding-x, $font-size) {
+  font-size: $font-size;
+  padding: $padding-y $padding-x;
+}
 
+// 动画 fade-inlinear
+@mixin transtion-fade-inlinear($prefix) {
+  // fade
+  .#{ $prefix }-enter-active {
+    transition: all 0.3s ease-out;
+  }
+  .#{ $prefix }-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  .#{ $prefix }-enter,
+  .#{ $prefix }-leave-to {
+    opacity: 0;
+  }
+}
+@mixin transition-fade-in($prefix) {
+  // fade
+  .#{ $prefix }-enter-active {
+    transition: all 0.3s ease-in;
+  }
+  .#{ $prefix }-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  .#{ $prefix }-enter,
+  .#{ $prefix }-leave-to {
+    opacity: 0;
+  }
+}
 
-
-
-
-// 不同的按钮类型 
-@mixin  button-types ($color , $background-color , $border-color , $border-type : solid ) {
-  color : $color ; 
-  background-color : $background-color;
-  border: $border-type 1px $border-color ; 
-} 
-
-// 不同的按钮尺寸 
-@mixin button-size ($padding-y  , $padding-x , $font-size ) {
-  font-size: $font-size ;
-  padding:$padding-y $padding-x ; 
+@mixin transition-zoom-center($prefix) {
+  .#{ $prefix }-enter-active {
+    transition: all 0.3s ease-in;
+  }
+  .#{ $prefix }-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  .#{ $prefix }-enter {
+    transform: scaleX(0);
+  }
+  .#{ $prefix }-enter-to {
+    transform: scaleX(1);
+  }
+  .#{ $prefix }-enter,
+  .#{ $prefix }-leave-to {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+@mixin transition-zoom-top($prefix) {
+  .#{ $prefix }-enter-active {
+    transition: all 0.3s ease-in;
+  }
+  .#{ $prefix }-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  .#{ $prefix }-enter {
+    transform: scale(1, 0);
+  }
+  .#{ $prefix }-leave-to {
+    opacity: 0;
+    transform: scale(1, 0);
+  }
 }
