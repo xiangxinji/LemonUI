@@ -1,0 +1,82 @@
+$menu-padding: 0px;
+
+
+$menu-vertical-border-bottom: 1px solid #e6e6e6;
+$menu-vertical-padding-left: 55px;
+
+
+$menu-item-padding: 0px 20px;
+$menu-vertical-item-height: 60px;
+$menu-horizontal-item-height: 56px;
+.lemon-menu {
+  padding: $menu-padding;
+  margin:0px;
+  white-space: nowrap;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  height:auto;
+  li{list-style: none}
+  // mode
+  &.menu-mode-vertical {
+    height:61px;
+    border-bottom: $menu-vertical-border-bottom;
+    flex-direction: row;
+    padding-left: $menu-vertical-padding-left;
+    box-sizing: border-box;
+    .lemon-menu-item {
+      height: calc(#{$menu-vertical-item-height} - 2px);
+      line-height: calc(#{$menu-vertical-item-height} - 2px);
+      margin-bottom:2px;
+      box-sizing: content-box;
+
+      &.active{
+        border-bottom: 2px solid #409eff;
+      }
+    }
+
+  }
+
+  &.menu-mode-horizontal {
+    width:261px ;
+    flex-direction: column;
+    border-right:$menu-vertical-border-bottom;
+    .lemon-menu-item{
+      height:56px;
+      line-height: 56px ;
+      border-left:solid 2px transparent;
+      &:hover{
+        background-color : #ecf5ff;
+      }
+      &.active{
+        color: #409eff;
+        background-color : #ecf5ff;
+      }
+    }
+    .lemon-submenu {
+      padding-left:20px;
+    }
+  }
+
+  // item
+  .lemon-menu-item {
+    list-style: none;
+    margin:0px;
+    padding: $menu-item-padding;
+    color: #909399;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom:none ;
+    border-color: #ffffff;
+    transition: border-color .3s ease-in;
+    &.active {
+      color: #303133;
+    }
+
+    // 禁用
+    &.disabled {
+      cursor: no-drop;
+    }
+  }
+
+}

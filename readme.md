@@ -83,13 +83,16 @@ status : 0  未完成, 1 即将完成 , 3 完成 , 4 追加中 , 5 修复中
 | Input  | 输入框 | 0    |
 | Icon  | 图标 | 1    |
 | Alert  | 弹框 | 0    |
-| NavMenu  | 导航 | 0    |
+| Menu  | 导航 | 1    |
 | Tabs  | 标签页 | 0    |
 | Tag  | 标签 | 0    |
 | Switch | 开关 | 1 |
 | Alert | 弹框 | 3 |
 | Transition | 动画 | 1 | 
 
+
+
+8-25 : submenu 未完成 , menu 和 menu item 基本完成
 
 
 

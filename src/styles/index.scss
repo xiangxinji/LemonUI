@@ -1,15 +1,12 @@
-// base styles 
-@import "variables" ;
-@import "reboot" ; 
+// base styles
+@import "variables";
+@import "reboot";
 @import "animation";
-@import "mixins" ; 
-
-
-
-
+@import "mixins";
 @import "../Link/index";
 @import "../Button/index";
-@import "../Icon/index" ;
+@import "../Icon/index";
 @import "../Switch/index";
-@import "../Alert/index" ; 
-@import "../Transition/index"
+@import "../Alert/index";
+@import "../Transition/index";
+@import "../Menu/index";
