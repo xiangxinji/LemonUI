@@ -1,13 +1,13 @@
-import LeLink from "./index.vue";
+import LeLink from './index.vue';
 
-import { renderByTemplate } from "../../utils/storybook";
-import "../styles/index.scss";
+import { renderByTemplate } from '../../utils/storybook';
+import '../../src/styles/index.scss';
 
 export default {
-  title: "链接",
+  title: '链接',
 };
 
-const render = renderByTemplate("LeLink", LeLink);
+const render = renderByTemplate('LeLink', LeLink);
 
 export const customerType = render(`
     <LeLink>默认链接</LeLink>

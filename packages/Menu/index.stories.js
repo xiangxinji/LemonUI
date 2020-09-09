@@ -3,7 +3,7 @@ import LeMenuItem from './menu-item.vue';
 import LeSubMenu from './submenu.vue';
 
 import { renderByComponents } from '../../utils/storybook';
-import '../styles/index.scss';
+import '../../src/styles/index.scss';
 
 const render = renderByComponents({
   LeMenu, LeMenuItem, LeSubMenu,

@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
+  componentName: 'le.icon',
   props: {
     color: {
       type: String,

@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  componentName: 'le.button',
   props: {
     // 尺寸
     size: {

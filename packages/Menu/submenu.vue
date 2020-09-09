@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  componentName: 'le.submenu',
   components: {
   },
   props: {

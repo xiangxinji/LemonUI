@@ -1,15 +1,14 @@
-import LeTransition from "./index.vue";
-import LeButton from "../Button/index.vue";
-import "../styles/index.scss";
+import LeTransition from './index.vue';
+import LeButton from '../Button/index.vue';
+import '../../src/styles/index.scss';
 
 export default {
-  title: "动画",
+  title: '动画',
 };
 
 const render = (names) => {
-  const itemStyle =
-    "padding:0px 20px;margin-top:10px;float:left;color:white;text-align:center;margin-right:10px;display:inline-block;height:100px;background-color:skyblue;line-height:100px;";
-  const wrapperStyle = "padding-top:10px; padding-left:10px;";
+  const itemStyle = 'padding:0px 20px;margin-top:10px;float:left;color:white;text-align:center;margin-right:10px;display:inline-block;height:100px;background-color:skyblue;line-height:100px;';
+  const wrapperStyle = 'padding-top:10px; padding-left:10px;';
   return {
     template: `
        <div style="${wrapperStyle}">
@@ -39,10 +38,6 @@ const render = (names) => {
   };
 };
 
-export const fade = () => {
-  return render(["fade-in-linear", "fade-in"]);
-};
+export const fade = () => render(['fade-in-linear', 'fade-in']);
 
-export const zoom = () => {
-  return render(["zoom-in-center", "zoom-in-top", "zoom-in-bottom"]);
-};
+export const zoom = () => render(['zoom-in-center', 'zoom-in-top', 'zoom-in-bottom']);

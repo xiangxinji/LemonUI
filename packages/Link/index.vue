@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  componentName: 'le.link',
   props: {
     // 类型
     type: {

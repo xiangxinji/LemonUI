@@ -1,0 +1,36 @@
+
+.lemon-form{
+  display:flex ;
+  flex-direction : column;
+  &.inline{
+    .lemon-formitem{float:left;}
+  }
+  &.label-position-left{.lemon-formitem .lemon-formitem__label {text-align:left !important;}}
+  &.label-position-right{.lemon-formitem .lemon-formitem__label {text-align:right !important; }}
+  &.label-position-top{
+    color:red;
+    .lemon-formitem {
+      flex-direction : column;
+    }
+    .lemon-formitem__content{
+      margin-left:0px;
+    }
+  }
+}
+.lemon-formitem{
+  display:flex ;
+  flex-direction : row;
+  margin-bottom:22px ;
+  font-weight: 400;
+  font-size:14px ;
+  .lemon-formitem__label{
+    color: #606266;
+    hiehgt:40px ;
+    line-height:40px;
+  }
+  .lemon-formitem__content{
+    height:40px;
+    line-height:40px;
+    margin-left:10px;
+  }
+}

@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  componentName: 'le.menu.item',
   inject: ['menuContext'],
   props: {
     index: {

@@ -22,6 +22,7 @@
 import LemonIcon from '../Icon/index.vue';
 
 export default {
+  componentName: 'le.alert',
   components: {
     LemonIcon,
   },

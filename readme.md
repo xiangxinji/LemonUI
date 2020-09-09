@@ -89,6 +89,7 @@ status : 0  未完成, 1 即将完成 , 3 完成 , 4 追加中 , 5 修复中
 | Switch | 开关 | 1 |
 | Alert | 弹框 | 3 |
 | Transition | 动画 | 1 | 
+| Form | 表单 | 0 | 
 
 
 

@@ -5,11 +5,11 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 // customer components ...
-import Link from './Link/index.vue';
-import Button from './Button/index.vue';
-import Icon from './Icon/index.vue';
-import Switch from './Switch/index.vue';
-import Alert from './Alert/index.vue';
+import Link from '../packages/Link/index.vue';
+import Button from '../packages/Button/index.vue';
+import Icon from '../packages/Icon/index.vue';
+import Switch from '../packages/Switch/index.vue';
+import Alert from '../packages/Alert/index.vue';
 
 library.add(fas);
 

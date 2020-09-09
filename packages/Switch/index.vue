@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  componentName: 'le.switch',
   props: {
     // 激活与未激活颜色
     activeColor: {

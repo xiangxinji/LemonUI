@@ -1,8 +1,4 @@
-
-
-
-
-describe('entry ' , ()=> {
-    it (' one case ' , () => {
-    })
-})
+describe('entry ', () => {
+  it(' one case ', () => {
+  });
+});

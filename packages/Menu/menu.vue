@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  componentName: 'le.menu',
   provide() {
     return {
       menuContext: this,
