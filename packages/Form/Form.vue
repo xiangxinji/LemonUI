@@ -8,11 +8,12 @@
 </template>
 
 <script>
+
 export default {
   componentName: 'le.form',
   provide() {
     return {
-      formIns: this,
+      form: this,
     };
   },
   props: {
@@ -53,6 +54,34 @@ export default {
         inline: this.inline,
         [`label-position-${this.labelPosition}`]: true,
       };
+    },
+  },
+  data() {
+    return {
+      fields: [],
+    };
+  },
+  created() {
+    this.$on('add.field', (field) => {
+      this.fields.push(field);
+    });
+    /**
+     * 删除form item
+     */
+    this.$on('remove.field', (field) => {
+      // eslint-disable-next-line no-underscore-dangle
+      this.fields = this.fields.filter((f) => f._uid !== field._uid);
+    });
+  },
+
+  /**
+   *  methods
+   */
+  methods: {
+    validate() {
+      return new Promise((resolve) => {
+        resolve(Promise.all(this.fields.map((field) => field.validate && field.validate())));
+      });
     },
   },
 };

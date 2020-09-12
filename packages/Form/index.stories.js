@@ -55,3 +55,86 @@ export const inline = () => render({}, `
     </LeFormItem>
   </LeForm>
 `);
+
+export const baseValidate = () => ({
+  components: {
+    LeForm: Form,
+    LeFormItem: FormItem,
+    LeButton: Button,
+  },
+  data() {
+    return {
+      formData: {
+        username: 'a',
+        password: '123456',
+      },
+      formRules: {
+        username: [
+          { required: true, message: '请输入用户名' },
+          { maxLength: 10, minLength: 2, message: '2-10的用户名' },
+        ],
+        password: { required: true, message: '请输入密码' },
+      },
+    };
+  },
+  methods: {
+    validator() {
+      this.$refs.leform.validate();
+    },
+  },
+  template: ` 
+   <div style="padding:10px;">
+     <LeButton @click="validator">调用验证</LeButton>
+     <LeForm ref="leform" :rules="formRules" :model="formData">
+       <LeFormItem label="用户名" prop="username"></LeFormItem>
+       <LeFormItem label="密码" prop="password"></LeFormItem>
+     </LeForm>
+   </div>
+  `,
+});
+
+export const customerValidateFunction = () => ({
+  components: {
+    LeForm: Form,
+    LeFormItem: FormItem,
+    LeButton: Button,
+  },
+  data() {
+    const validatorUserName = (r, v, cb) => {
+      setTimeout(() => {
+        cb(v === 'admin' ? null : new Error('没找到这个用户名'));
+      }, 1000);
+    };
+    return {
+      formData: {
+        username: 'a',
+        password: '123456',
+      },
+      formRules: {
+        username: [
+          { minLength: 2, maxLength: 10, message: '请输入合理的密码' },
+        ],
+        password: { required: true, message: '请输入密码' },
+      },
+    };
+  },
+  methods: {
+    validator() {
+      this.$refs.leform.validate().then(() => {
+        console.log('校验成功');
+      }).catch(() => {
+        console.log('校验失败');
+      });
+    },
+  },
+  template: ` 
+   <div style="padding:10px;">
+     <LeButton @click="validator">调用验证</LeButton>
+     <input type="text" v-model="formData.username">
+     <LeForm ref="leform" :rules="formRules" :model="formData">
+       <LeFormItem label="用户名" prop="username">{{  formData.username }}</LeFormItem>
+       <LeFormItem label="密码" prop="password">{{  formData.password }}</LeFormItem>
+     </LeForm>
+   </div>
+  `,
+});

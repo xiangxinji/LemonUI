@@ -7,6 +7,7 @@ const {
   outputPath,
   outputFileName,
   outputCssFileName,
+  srcPath,
 } = require('../config/build');
 
 const isRunningAnalys = process.env.RUNNING_ANALYS === 'YES';
@@ -45,7 +46,11 @@ const config = {
       },
     ],
   },
-  resolve: {},
+  resolve: {
+    alias: {
+      '@': srcPath,
+    },
+  },
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({

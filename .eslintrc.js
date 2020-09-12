@@ -30,6 +30,8 @@ module.exports = {
   rules: {
     // 关闭这个 no-console的规则
     'no-console': 'off',
-    'prefer-spread' : 'off'
+    'prefer-spread': 'off',
+    'min-len': ['error', 150],
+    'no-plusplus': 0,
   },
 };
