@@ -112,6 +112,7 @@ export const customerValidateFunction = () => ({
       },
       formRules: {
         username: [
+          { validator: validatorUserName },
           { minLength: 2, maxLength: 10, message: '请输入合理的密码' },
         ],
         password: { required: true, message: '请输入密码' },

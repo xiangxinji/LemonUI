@@ -9,7 +9,9 @@
     <div class="lemon-formitem__content">
       <slot></slot>
     </div>
-    {{ errorMessage }} - {{ validateState}}
+    <div style="line-height:40px;">
+      {{ errorMessage }} - {{ validateState}}
+    </div>
   </div>
 </template>
 
@@ -115,7 +117,7 @@ export default {
     },
 
     rulesIterator(rules) {
-      // ! 将所有的异步防范进行抽离, 和同步的进行区分
+      // ! 将所有的异步规则进行抽离, 和同步的进行区分
       const validators = [];
       const syncRules = [];
       rules.forEach((r) => {
@@ -149,6 +151,7 @@ export default {
           }));
           validateSuccess(Promise.all(all));
         } else {
+          this.setValidateContext('success', '');
           validateSuccess();
         }
         return null;
@@ -177,7 +180,6 @@ export default {
       r.sort((a) => (isFunc(a.validator) ? 1 : -1));
       // 其中包含 异步函数
       this.asynValidating = r.some((rule) => isFunc(rule.validator));
-      console.log(r);
       return r;
     },
 
