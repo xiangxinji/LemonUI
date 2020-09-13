@@ -10,6 +10,7 @@
 <script>
 
 export default {
+  name: 'LeForm',
   componentName: 'le.form',
   provide() {
     return {
