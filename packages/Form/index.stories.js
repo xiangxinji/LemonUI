@@ -1,6 +1,6 @@
-import Form from './Form.vue';
-import FormItem from './FormItem.vue';
-import Button from '../Button/index.vue';
+import Form from './src/Form.vue';
+import FormItem from './src/FormItem.vue';
+import Button from '../Button/src/index.vue';
 
 const render = (data, template) => ({
   components: {

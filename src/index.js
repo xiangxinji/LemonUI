@@ -1,30 +1,42 @@
 import './styles/index.scss';
 
-// icons
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import Alert from '../packages/Alert';
+import Button from '../packages/Button';
+import Form from '../packages/Form';
+import FormItem from '../packages/FormItem';
+import Icon from '../packages/Icon';
+import Link from '../packages/Link';
+import Menu from '../packages/Menu';
+import MenuItem from '../packages/MenuItem';
+import SubMenu from '../packages/SubMenu';
+import Switch from '../packages/Switch';
+import Transition from '../packages/Transition';
 
-// customer components ...
-import Link from '../packages/Link/index.vue';
-import Button from '../packages/Button/index.vue';
-import Icon from '../packages/Icon/index.vue';
-import Switch from '../packages/Switch/index.vue';
-import Alert from '../packages/Alert/index.vue';
-
-library.add(fas);
-
-const components = {
-  Link,
-  Button,
-  Icon,
-  Switch,
-  Alert,
+const components = [
+  Alert, Button, Form, FormItem, Icon, Link, Menu, MenuItem, SubMenu, Switch, Transition,
+];
+const install = (Vue) => {
+  components.forEach((component) => {
+    Vue.component(component.name, component);
+  });
 };
 
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue);
+}
+
 export default {
-  install(Vue) {
-    Object.keys(components).forEach((key) => {
-      Vue.component(`le-${key.toLowerCase()}`, components[key]);
-    });
-  },
+  version: '1.0.0',
+  install,
+  Alert,
+  Button,
+  Form,
+  FormItem,
+  Icon,
+  Link,
+  Menu,
+  MenuItem,
+  SubMenu,
+  Switch,
+  Transition,
 };

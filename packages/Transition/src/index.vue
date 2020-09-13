@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'LeTransition',
   componentName: 'le.transition',
   props: {
     name: {

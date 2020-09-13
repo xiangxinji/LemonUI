@@ -20,9 +20,10 @@ import {
   isDef, isFunc, isObj, isNotDef, isError,
 } from '@/helpers/validate';
 import Emitter from '@/mixins/emitter';
-import syncValidate from './syncValidate.js';
+import syncValidate from './syncValidate';
 
 export default {
+  name: 'LeFormItem',
   componentName: 'le.form.item',
   inject: ['form'],
   mixins: [Emitter],

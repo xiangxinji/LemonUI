@@ -1,7 +1,7 @@
 // icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import LeAlert from './index.vue';
+import LeAlert from './src/index.vue';
 import { renderByTemplate } from '../../utils/storybook';
 import '../../src/styles/index.scss';
 

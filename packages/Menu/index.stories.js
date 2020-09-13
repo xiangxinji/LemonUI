@@ -1,6 +1,6 @@
-import LeMenu from './menu.vue';
-import LeMenuItem from './menu-item.vue';
-import LeSubMenu from './submenu.vue';
+import LeMenu from './src/menu.vue';
+import LeMenuItem from './src/menu-item.vue';
+import LeSubMenu from './src/submenu.vue';
 
 import { renderByComponents } from '../../utils/storybook';
 import '../../src/styles/index.scss';

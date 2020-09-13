@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: 'LeSubMenu',
   componentName: 'le.submenu',
   components: {
   },
@@ -20,7 +21,6 @@ export default {
     },
   },
   inject: ['menuContext'],
-  name: 'submenu',
   computed: {
     wrapperClass() {
       return {

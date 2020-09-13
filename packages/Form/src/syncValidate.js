@@ -6,7 +6,7 @@
  * @时间: 2020-09-12
  */
 import {
-  isPhone, isNumber, isDef, isTruthy,
+  isPhone, isNumber, isDef,
   isRequired, isStr,
 } from '@/helpers/validate';
 

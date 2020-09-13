@@ -33,5 +33,16 @@ module.exports = {
     'prefer-spread': 'off',
     'min-len': ['error', 150],
     'no-plusplus': 0,
+    'no-mixed-operators': 0,
+    'no-restricted-syntax': 0,
+    'no-prototype-builtins': 0,
+    'min-len': 0,
+  },
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: './build/build.js',
+      },
+    },
   },
 };

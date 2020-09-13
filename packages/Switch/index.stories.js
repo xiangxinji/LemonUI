@@ -1,4 +1,4 @@
-import LeSwitch from './index.vue';
+import LeSwitch from './src/index.vue';
 
 import { renderByTemplate } from '../../utils/storybook';
 import '../../src/styles/index.scss';

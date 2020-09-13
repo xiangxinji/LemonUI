@@ -1,4 +1,4 @@
-import LeButton from './index.vue';
+import LeButton from './src/index.vue';
 import { renderByTemplate } from '../../utils/storybook';
 import '../../src/styles/index.scss';
 

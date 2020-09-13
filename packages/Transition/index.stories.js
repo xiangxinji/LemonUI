@@ -1,5 +1,5 @@
-import LeTransition from './index.vue';
-import LeButton from '../Button/index.vue';
+import LeTransition from './src/index.vue';
+import LeButton from '../Button/src/index.vue';
 import '../../src/styles/index.scss';
 
 export default {
