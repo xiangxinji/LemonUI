@@ -1,0 +1,10 @@
+.lemon-upload{
+  display: inline-block;
+  position: relative;
+
+  > input[type=file] {
+    visibility: hidden;
+    position: absolute;
+    width:1px;height:1px;
+  }
+}

@@ -31,12 +31,13 @@ module.exports = {
     // 关闭这个 no-console的规则
     'no-console': 'off',
     'prefer-spread': 'off',
-    'min-len': ['error', 150],
+    'max-len': 0,
     'no-plusplus': 0,
     'no-mixed-operators': 0,
     'no-restricted-syntax': 0,
     'no-prototype-builtins': 0,
     'min-len': 0,
+    'no-param-reassign' : 0
   },
   settings: {
     'import/resolver': {
