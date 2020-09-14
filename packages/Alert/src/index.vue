@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import LemonIcon from '../../Icon/src/index.vue';
+import LemonIcon from '../../Icon';
 
 export default {
   name: 'LeAlert',
