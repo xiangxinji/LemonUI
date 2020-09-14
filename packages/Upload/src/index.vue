@@ -1,5 +1,6 @@
 <script>
 import { noop, toArray } from '@/helpers/functions';
+import { isDef } from '@/helpers/validate';
 import upload from './upload.vue';
 
 export default {
@@ -121,7 +122,45 @@ export default {
         raw: rawFile,
       };
       this.uploadFiles.push(file);
-      console.log(this.uploadFiles);
+    },
+    handleProgress(e, rawFile) {
+      const file = this.getFile(rawFile.uid);
+      if (isDef(file)) {
+        file.percentage = e.percent;
+        this.onProgress(e, rawFile, this.uploadFiles);
+      }
+    },
+    handleError(e, rawFile) {
+      const file = this.getFile(rawFile.uid);
+      if (isDef(file)) {
+        file.status = 'error';
+      }
+      this.onError(e, rawFile, this.uploadFiles);
+    },
+    handleSuccess(e, rawFile) {
+      const file = this.getFile(rawFile.uid);
+      if (isDef(file)) {
+        file.status = 'success';
+      }
+      this.onSuccess(e, rawFile, this.uploadFiles);
+    },
+    handleExceed(files) {
+      this.onExceed(files, this.uploadFiles);
+    },
+    getFile(uid) {
+      let r = null;
+      this.uploadFiles.forEach((item) => {
+        if (uid === item.uid) r = item;
+      });
+      return r;
+    },
+
+    submit() {
+      if (this.$refs.uploader && this.uploadFiles.length > 0) {
+        this.uploadFiles.forEach((item) => {
+          this.$refs.uploader.upload(item.raw);
+        });
+      }
     },
   },
   render() {
@@ -130,11 +169,22 @@ export default {
         action: this.action,
         multiple: this.multiple,
         autoUpload: this.autoUpload,
+        accept: this.accept,
+        data: this.data,
+        headers: this.headers,
+        withCredentials: this.withCredentials,
+        beforeUpload: this.beforeUpload,
+        size: this.uploadFiles.length,
+        limit: this.limit,
         'on-start': this.handlerStart,
+        'on-progress': this.handleProgress,
+        'on-error': this.handleError,
+        'on-success': this.handleSuccess,
+        'on-exceed': this.handleExceed,
       },
     };
     const trigger = this.$slots.trigger || this.$slots.default;
-    const uploadComponent = <upload { ...uploadData } >{trigger}</upload>;
+    const uploadComponent = <upload ref="uploader" { ...uploadData } >{trigger}</upload>;
     return (
         <div>
           {
