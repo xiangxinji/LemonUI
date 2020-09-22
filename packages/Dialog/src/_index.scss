@@ -1,0 +1,35 @@
+.lemon-dialog__wrapper{
+  position: fixed;
+  width: 100vw ;
+  height:100vh ;
+  background: rgba(0,0,0,.4);
+  .lemon-dialog{
+    background-color: white;
+    margin:0 auto;
+    position: relative;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    box-sizing: border-box;
+
+    .le-dialog__header{
+      position: relative;
+      padding:20px 20px 10px 20px;
+      font-size:18px;
+      color:#303133;
+      .le-header__icon{
+        position: absolute;
+        right:20px;
+        top:20px;
+        cursor: pointer;
+      }
+    }
+    .le-dialog__footer{
+      text-align: right;
+      box-sizing: border-box;
+      padding:10px 20px 20px;
+    }
+  }
+}
+.lemon-dialog__wrapper.disable-modal{
+
+}
