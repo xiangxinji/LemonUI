@@ -4,6 +4,8 @@
 .lemon-progress__line{
   display: flex;
   align-items: center;
+  font-size:14px;
+  padding:3px 0px;
   .progress_line{
     width:300px;
     background-color: #ebeef5;
@@ -13,6 +15,8 @@
       width:0px;
       height:100%;
       transition: width .3s ease-in-out;
+      text-align: right;
+      color:white;
     }
   }
 }

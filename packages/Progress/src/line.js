@@ -32,12 +32,20 @@ export default {
       },
     },
   },
+  computed: {
+    sw() {
+      return `${this.strokeWidth}px`;
+    },
+  },
   render() {
+    const { sw } = this;
     return <div class="lemon-progress__line">
-      <div class="progress_line" style={{ height: `${this.strokeWidth}px`, borderRadius: `${this.strokeWidth}px` }}>
-        <div class="progress_line__inner" style={{ width: `${this.p}%`, borderRadius: `${this.strokeWidth}px` }}></div>
+      <div class="progress_line" style={{ height: sw, borderRadius: sw }}>
+        <div class="progress_line__inner" style={{ width: `${this.p}%`, borderRadius: sw, lineHeight: sw }}>
+          { (this.textInside && this.p >= 10) && <span>{ this.format(this.p) }</span>}
+        </div>
       </div>
-      <span>{ this.format(this.p) } %</span>
+      { !this.textInside && <span>{ this.format(this.p) } </span>}
     </div>;
   },
 

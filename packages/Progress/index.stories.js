@@ -30,3 +30,40 @@ export const baseUsage = () => ({
    </div>
   `,
 });
+
+export const strokeWidth = () => ({
+  components: {
+    LeProgress: Progress,
+  },
+  template: `
+    <le-progress :percentage="20" :stroke-width="10"></le-progress>
+  `,
+});
+
+export const format = () => ({
+  components: {
+    LeProgress: Progress,
+  },
+  template: `      
+    <le-progress :percentage="20" :format="v => v+ '%工作进度'"></le-progress>
+  `,
+});
+
+export const textInside = () => ({
+  components: {
+    LeButton: Button,
+    LeProgress: Progress,
+  },
+  data() {
+    return {
+      d: 0,
+    };
+  },
+  template: `
+      <div>
+        <le-button size="small" @click="d += 10">加一点</le-button>
+        <le-button size="small" @click="d -= 10">减一点</le-button>
+        <le-progress :percentage="d" :text-inside="true" :stroke-width="27"></le-progress>
+      </div>
+  `,
+});

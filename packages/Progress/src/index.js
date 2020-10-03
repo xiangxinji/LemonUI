@@ -1,6 +1,6 @@
 import line from './line';
 
-const noopForArgs = (v) => v;
+const noopForArgs = (v) => `${v}%`;
 
 export default {
   components: {
