@@ -13,7 +13,8 @@
     "lint": "eslint --fix --ext .js,.jsx,.vue src",
     "build:analyzer": "cross-env NODE_ENV=production RUNNING_ANALYS=YES webpack --config build/build.js",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook -c .storybook"
+    "build-storybook": "build-storybook -c .storybook",
+    "publish:prod": "npm run lint && npm run build-storybook && cross-env target=prod gulp prod"
   },
   "keywords": [],
   "author": "",
@@ -42,6 +43,8 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-vue": "^6.2.2",
+    "gulp": "^4.0.2",
+    "gulp-sftp-up4": "^0.1.8",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.0.1",
     "mini-css-extract-plugin": "^0.9.0",
