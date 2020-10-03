@@ -1,6 +1,6 @@
 <template>
   <div :class="wrapperClass" @click="handleClickEvent">
-    <input type="checkbox" :name="name" />
+    <input type="checkbox" :name="name" :disabled="disabled" />
     <span class="lemon-switch__core" :style="coreStyles"></span>
   </div>
 </template>
@@ -13,11 +13,11 @@ export default {
     // 激活与未激活颜色
     activeColor: {
       type: String,
-      default: 'rgb(19, 206, 102)',
+      default: '#409eff',
     },
     inactiveColor: {
       type: String,
-      default: 'rgb(255, 73, 73)',
+      default: '#dcdfe6',
     },
     // 长度
     width: {
@@ -51,24 +51,27 @@ export default {
   },
   methods: {
     handleClickEvent() {
-      this.$emit('change', !this.value);
+      if (this.disabled) {
+        return;
+      }
+      const v = this.value === this.activeValue ? this.inactiveValue : this.activeValue;
+      this.$emit('change', v);
     },
   },
   computed: {
     wrapperClass() {
       return {
         'lemon-switch': true,
-        'is-checked': this.value,
+        'is-checked': this.value === this.activeValue,
+        disabled: this.disabled,
       };
     },
     coreStyles() {
       return {
         width: `${this.width}px`,
-        backgroundColor: this.value ? this.activeColor : this.inactiveColor,
+        backgroundColor: this.value === this.activeValue ? this.activeColor : this.inactiveColor,
       };
     },
   },
 };
 </script>
-
-<style></style>

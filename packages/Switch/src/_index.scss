@@ -8,15 +8,15 @@ $core-slide-bg: #fff;
 $core-slide-border-radius: 50%;
 .lemon-switch {
     display: inline-block;
-
     user-select: none;
+    height:20px;
+    cursor: pointer;
     input[type="checkbox"] {
         width: 0px;
         height: 0px;
         display: none;
     }
     .lemon-switch__core {
-        cursor: pointer;
         width: $core-size-w;
         height: $core-size-h;
         display: inline-block;
@@ -35,9 +35,15 @@ $core-slide-border-radius: 50%;
             left: 2px;
         }
     }
-}
-.is-checked {
-    .lemon-switch__core::after {
-        left: calc(100% - 18px);
+
+    &.disabled{opacity: .75;}
+    &.disabled:hover {
+        cursor: not-allowed !important;
+    }
+    &.is-checked {
+        .lemon-switch__core::after {
+            left: calc(100% - 18px);
+        }
     }
 }
+
