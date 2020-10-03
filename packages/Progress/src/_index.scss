@@ -1,0 +1,27 @@
+
+
+
+.lemon-progress__line{
+  display: flex;
+  align-items: center;
+  .progress_line{
+    width:300px;
+    background-color: #ebeef5;
+    margin:0px 5px;
+    overflow: hidden;
+    .progress_line__inner{
+      width:0px;
+      height:100%;
+      transition: width .3s ease-in-out;
+    }
+  }
+}
+
+.progress-line.theme-light .progress_line{
+  background-color: #eee;
+}
+@each $type,$val in $theme-colors {
+  .progress-line.theme-#{$type} .progress_line .progress_line__inner{
+    background-color:$val;
+  }
+}
