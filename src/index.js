@@ -11,9 +11,10 @@ import MenuItem from '../packages/MenuItem';
 import SubMenu from '../packages/SubMenu';
 import Switch from '../packages/Switch';
 import Transition from '../packages/Transition';
+import Radio from '../packages/Radio';
 
 const components = [
-  Alert, Button, Form, FormItem, Icon, Link, Menu, MenuItem, SubMenu, Switch, Transition,
+  Alert, Button, Form, FormItem, Icon, Link, Menu, MenuItem, SubMenu, Switch, Transition, Radio,
 ];
 const install = (Vue) => {
   components.forEach((component) => {
@@ -39,4 +40,5 @@ export default {
   SubMenu,
   Switch,
   Transition,
+  Radio,
 };

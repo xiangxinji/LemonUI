@@ -40,4 +40,4 @@ const render = (names) => {
 
 export const fade = () => render(['fade-in-linear', 'fade-in']);
 
-export const zoom = () => render(['zoom-in-center', 'zoom-in-top', 'zoom-in-bottom']);
+export const zoom = () => render(['zoom-in-center', 'zoom-in-top']);
