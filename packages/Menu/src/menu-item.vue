@@ -1,14 +1,19 @@
 <template>
-    <li :class="wrapperClass" @click="changeCurrentIndex">
+    <li :class="wrapperClass" @click="changeCurrentIndex" :style="[paddingStyle]">
         <slot></slot>
     </li>
 </template>
 
 <script>
+
+import MenuMixin from './menu-mixin';
+
 export default {
   name: 'LeMenuItem',
   componentName: 'le.menu.item',
-  inject: ['menuContext'],
+  mixins: [
+    MenuMixin,
+  ],
   props: {
     index: {
       type: String,

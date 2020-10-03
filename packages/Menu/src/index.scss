@@ -3,8 +3,6 @@ $menu-padding: 0px;
 
 $menu-vertical-border-bottom: 1px solid #e6e6e6;
 $menu-vertical-padding-left: 55px;
-
-
 $menu-item-padding: 0px 20px;
 $menu-vertical-item-height: 60px;
 $menu-horizontal-item-height: 56px;
@@ -41,7 +39,7 @@ $menu-horizontal-item-height: 56px;
     width:261px ;
     flex-direction: column;
     border-right:$menu-vertical-border-bottom;
-    .lemon-menu-item{
+    .lemon-menu-item,.lemon-submenu__title{
       height:56px;
       line-height: 56px ;
       border-left:solid 2px transparent;
@@ -53,13 +51,10 @@ $menu-horizontal-item-height: 56px;
         background-color : #ecf5ff;
       }
     }
-    .lemon-submenu {
-      padding-left:20px;
-    }
   }
 
   // item
-  .lemon-menu-item {
+  .lemon-menu-item ,.lemon-submenu__title{
     list-style: none;
     margin:0px;
     padding: $menu-item-padding;
@@ -75,8 +70,17 @@ $menu-horizontal-item-height: 56px;
 
     // 禁用
     &.disabled {
+      user-select: none;
       cursor: no-drop;
     }
   }
-
 }
+
+
+.lemon-submenu{
+  padding:0px;
+  .lemon-menu-item {
+    padding-left:40px;
+  }
+}
+
