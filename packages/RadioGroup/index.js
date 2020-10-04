@@ -1,4 +1,4 @@
-import RadioGroup from './src';
+import RadioGroup from './src/index.vue';
 
 RadioGroup.install = function install(Vue) {
   Vue.component(RadioGroup.name, RadioGroup);

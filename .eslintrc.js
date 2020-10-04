@@ -1,6 +1,5 @@
 module.exports = {
   // 当前为根配置文件
-  root: true,
   env: {
     browser: true,
     es6: true,

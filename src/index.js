@@ -13,6 +13,8 @@ import Switch from '../packages/Switch';
 import Transition from '../packages/Transition';
 import Radio from '../packages/Radio';
 
+const version = '1.0.3';
+
 const components = [
   Alert, Button, Form, FormItem, Icon, Link, Menu, MenuItem, SubMenu, Switch, Transition, Radio,
 ];
@@ -27,7 +29,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.0',
+  version,
   install,
   Alert,
   Button,

@@ -50,8 +50,8 @@
 
 main.js中  
 ```javascript
-import LemonUI from 'lemon-ui' ; 
-import 'lemon-ui/dist/index.css';
+import LemonUI from 'ui-lemon' ; 
+import 'ui-lemon/dist/index.css';
 Vue.use(LemonUI) 
 ```
 以上使用即可,与ElementUI相同 
@@ -73,6 +73,9 @@ Vue.use(LemonUI)
 
 ## 未开发功能
 1. upload 的上传列表组件 
+
+## npm link 
+[UI-LEMON](https://www.npmjs.com/package/ui-lemon)
 
 
 

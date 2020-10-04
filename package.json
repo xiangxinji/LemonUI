@@ -1,12 +1,15 @@
 {
-  "name": "lemon-ui",
-  "version": "1.0.0",
-  "description": "",
+  "name": "ui-lemon",
+  "version": "1.0.3",
+  "description": "一个 PC 端的组件库(Vue)",
   "sideEffects": [
     "*.scss",
     "*.css"
   ],
   "main": "dist/index.js",
+  "peerDependencies": {
+    "vue": ">=2.6.0"
+  },
   "scripts": {
     "test": "jest",
     "build": "npm run lint && webpack --config build/build.js",
@@ -14,10 +17,11 @@
     "build:analyzer": "cross-env NODE_ENV=production RUNNING_ANALYS=YES webpack --config build/build.js",
     "storybook": "start-storybook",
     "build-storybook": "build-storybook -c .storybook",
-    "publish:prod": "npm run lint && npm run build-storybook && cross-env target=prod gulp prod"
+    "publish:prod": "npm run lint && npm run test && npm run build-storybook && cross-env target=prod gulp prod",
+    "publish:npm" : "npm publish"
   },
   "keywords": [],
-  "author": "",
+  "author": "xiangxinji",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.5",
@@ -53,6 +57,7 @@
     "sass": "^1.26.10",
     "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",
+    "vue": "^2.6.11",
     "vue-jest": "^3.0.5",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.11",
@@ -65,8 +70,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/vue-fontawesome": "^0.1.10",
-    "classname": "0.0.0",
-    "vue": "^2.6.11"
+    "classname": "0.0.0"
   },
   "jest": {
     "moduleFileExtensions": [
