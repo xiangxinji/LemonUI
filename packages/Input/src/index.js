@@ -1,3 +1,5 @@
+import className from 'classname';
+
 export default {
   name: 'LeInput',
   componentName: 'le.input',
@@ -35,10 +37,21 @@ export default {
     },
     name: String,
     readonly: Boolean,
-    resize: String,
+  },
+  data() {
+    return {
+      // 用户是否聚焦
+      focus: false,
+    };
   },
   render() {
-    return <div class="lemon-input">
+    const classes = className({
+      'lemon-input': true,
+      focus: this.focus,
+      [this.type]: true,
+    });
+
+    return <div class={classes}>
       <div className="lemon-input__wrapper">
         {this.type !== 'textarea' ? this.renderInputTag() : this.renderTextAreaTag()}
       </div>
@@ -48,16 +61,28 @@ export default {
     handlerInputEvent(e) {
       if (this.disabled) return;
       //  ! 特殊处理 minLength ! 可能不需要
-      if (this.minLength && e.target.value >= this.minLength) {
-        this.$emit('change', e.target.value);
+      if (this.minLength) {
+        if (e.target.value >= this.minLength) {
+          this.$emit('change', e.target.value);
+          return;
+        }
       }
+      this.$emit('change', e.target.value);
+    },
+    handlerFocusEvent() {
+      this.focus = true;
+    },
+    handlerBlurEvent() {
+      this.focus = false;
     },
     renderInputTag() {
       const {
         name, maxLength, minLength, value, type, placeholder, disabled, readonly,
         handlerInputEvent,
+        handlerFocusEvent,
+        handlerBlurEvent,
       } = this;
-      return <input readOnly={readonly} disabled={disabled} placeholder={placeholder} type={type} value={value} name={name}
+      return <input onFocus={handlerFocusEvent} onBlur={handlerBlurEvent} class="lemon-input__field text" readOnly={readonly} disabled={disabled} placeholder={placeholder} type={type} value={value} name={name}
                     maxLength={maxLength} minLength={minLength} onInput={handlerInputEvent} />;
     },
     clearValue() {
@@ -65,11 +90,13 @@ export default {
     },
     renderTextAreaTag() {
       const {
-        placeholder, name, maxLength, minLength, value, disabled, resize, rows, readonly,
+        placeholder, name, maxLength, minLength, value, disabled, rows, readonly,
         handlerInputEvent,
+        handlerFocusEvent,
+        handlerBlurEvent,
       } = this;
-      return <textarea readOnly={readonly} rows={rows} resize={resize} disabled={disabled} value={value} name={name} maxLength={maxLength} minLength={minLength}
-                       onInput={handlerInputEvent}>{ placeholder }</textarea>;
+      return <textarea onFocus={handlerFocusEvent} onBlur={handlerBlurEvent} class="lemon-input__field textarea" readOnly={readonly} rows={rows} disabled={disabled} value={value} name={name} maxLength={maxLength}
+                       minLength={minLength} onInput={handlerInputEvent}>{ placeholder }</textarea>;
     },
   },
 };

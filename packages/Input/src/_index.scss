@@ -1,0 +1,26 @@
+.lemon-input__field{
+  outline: none;
+}
+.lemon-input{
+  width:180px;
+  display: inline-block;
+  position: relative;
+  &.focus .lemon-input__field{
+    border-color: #409eff;
+  }
+  .lemon-input__field{
+    width:100%;
+    height:40px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    transition: border-color .2s ease-in;
+    cursor: pointer;
+    padding:0px 15px;
+    line-height: 40px;
+    font-size: inherit;
+  }
+  .lemon-input__field.textarea{
+    height:auto;
+  }
+}
+

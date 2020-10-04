@@ -33,7 +33,12 @@ export const type = render(`
     <div>
         type = textarea {{ value }}
         <hr />
-        <le-input type="textarea" v-model="value"></le-input>
+        <le-input type="textarea" v-model="value" style="width:410px;" :rows="6"></le-input>
+    </div>
+     <div>
+        type = password {{ value }}
+        <hr />
+        <le-input type="password" v-model="value"></le-input>
     </div>
   </div>
 `);
@@ -44,6 +49,12 @@ export const maxLengthOrMinLength = render(`
     <le-input v-model="value" :max-length="10" :min-length="3"/>
   </div>
 `);
+
+export const placeholder = render(`
+  <div>
+    <le-input v-model="value" placeholder="请输入"></le-input>
+  </div>
+`)
 
 export const disabled = render(`
   <div>
@@ -61,6 +72,7 @@ export const disabled = render(`
 export const resize = render(`
   <div>
     <le-input type="textarea" v-model="value" resize="horizontal"></le-input>
+    <le-input type="textarea" v-model="value" resize="both"></le-input>
   </div>
 `);
 
