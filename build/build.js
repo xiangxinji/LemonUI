@@ -60,6 +60,7 @@ const config = {
   ],
 };
 
+// eslint-disable-next-line no-shadow
 module.exports = (({ isRunningAnalys }) => {
   if (isRunningAnalys) {
     config.plugins.push(new WebpackBundleAnalyzer.BundleAnalyzerPlugin());
