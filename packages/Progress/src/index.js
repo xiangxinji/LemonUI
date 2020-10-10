@@ -1,10 +1,12 @@
 import line from './line';
+import circle from './circle';
 
 const noopForArgs = (v) => `${v}%`;
 
 export default {
   components: {
     lineProgress: line,
+    circleProgress: circle,
   },
   props: {
     percentage: {
@@ -39,10 +41,14 @@ export default {
       type: String,
       default: 'primary',
     },
+    radius: {
+      type: Number,
+      default: 50,
+    },
   },
   render(h) {
     const {
-      strokeWidth, textInside, showText, percentage, format,
+      strokeWidth, textInside, showText, percentage, format, radius,
     } = this;
     const props = {
       strokeWidth,
@@ -50,6 +56,7 @@ export default {
       showText,
       percentage: percentage > 100 ? 100 : percentage,
       format,
+      radius,
     };
     return (
       <div class={`lemon-progress progress-${this.type} theme-${this.theme}`}>

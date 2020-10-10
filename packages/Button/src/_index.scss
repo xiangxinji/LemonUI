@@ -1,3 +1,15 @@
+// 不同的按钮类型
+@mixin button-types($color, $background-color, $border-color, $border-type: solid) {
+    color: $color;
+    background-color: $background-color;
+    border: $border-type 1px $border-color;
+}
+// 不同的按钮尺寸
+@mixin button-size($padding-y, $padding-x, $font-size) {
+    font-size: $font-size;
+    padding: $padding-y $padding-x;
+}
+
 .lemon__button {
     @include button-types($gray-900, white, $border-color);
     padding: $btn-padding-y $btn-padding-x;
@@ -34,13 +46,12 @@
         @include button-types($white , $danger , $danger)
     }
     &.button-type-warning {
-       
         @include button-types($white , $warning , $warning)
     }
     &.button-type-info {
         @include button-types($white , $info , $info)
     }
-  
+
     // 尺寸
     &.button-size-small {
         @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm);

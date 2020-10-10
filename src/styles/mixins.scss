@@ -1,15 +1,6 @@
-// 不同的按钮类型
-@mixin button-types($color, $background-color, $border-color, $border-type: solid) {
-  color: $color;
-  background-color: $background-color;
-  border: $border-type 1px $border-color;
-}
 
-// 不同的按钮尺寸
-@mixin button-size($padding-y, $padding-x, $font-size) {
-  font-size: $font-size;
-  padding: $padding-y $padding-x;
-}
+
+
 
 // 动画 fade-inlinear
 @mixin transtion-fade-inlinear($prefix) {
