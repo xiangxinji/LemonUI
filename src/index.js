@@ -12,11 +12,13 @@ import SubMenu from '../packages/SubMenu';
 import Switch from '../packages/Switch';
 import Transition from '../packages/Transition';
 import Radio from '../packages/Radio';
+import Progress from '../packages/Progress';
+import Notification from '../packages/Notification';
 
 const version = '1.0.3';
 
 const components = [
-  Alert, Button, Form, FormItem, Icon, Link, Menu, MenuItem, SubMenu, Switch, Transition, Radio,
+  Alert, Button, Form, FormItem, Icon, Link, Menu, MenuItem, SubMenu, Switch, Transition, Radio, Progress, Notification,
 ];
 const install = (Vue) => {
   components.forEach((component) => {
@@ -43,4 +45,6 @@ export default {
   Switch,
   Transition,
   Radio,
+  Notification,
+  Progress,
 };

@@ -1,6 +1,6 @@
 {
   "name": "ui-lemon",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "一个 PC 端的组件库(Vue)",
   "sideEffects": [
     "*.scss",
