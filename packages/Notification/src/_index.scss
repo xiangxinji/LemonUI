@@ -1,9 +1,35 @@
 .lemon-notification{
   width:300px;
-  height:100px;
-  background-color:red;
+  min-height:80px;
+  background-color:white ;
   position: fixed;
   opacity: 1;
-  transition: top .3s ease-in-out;
-  right:0px;
+  transition: opacity .3s ease-in-out;
+  border:1px solid #ebeef5;
+  right:-300px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  transition-property: left,top,right,top,opacity,transform;
+  border-radius:5px;
+  padding-bottom:10px;
+  .close{
+    position: absolute;
+    right:15px;
+    top:10px;
+    cursor: pointer;
+  }
+  .title{
+    padding:10px 30px 0 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    width:100%;
+  }
+  .message-panel{
+    margin-top:10px;
+    margin-left: 10px;
+    font-size: 14px;
+    color:#666;
+  }
 }
+
