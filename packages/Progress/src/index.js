@@ -45,10 +45,14 @@ export default {
       type: Number,
       default: 50,
     },
+    color: {
+      type: String,
+      default: '#409EFF',
+    },
   },
   render(h) {
     const {
-      strokeWidth, textInside, showText, percentage, format, radius,
+      strokeWidth, textInside, showText, percentage, format, radius, color,
     } = this;
     const props = {
       strokeWidth,
@@ -57,6 +61,7 @@ export default {
       percentage: percentage > 100 ? 100 : percentage,
       format,
       radius,
+      color,
     };
     return (
       <div class={`lemon-progress progress-${this.type} theme-${this.theme}`}>

@@ -87,7 +87,6 @@ export const type = () => ({
   `,
 });
 
-
 export const radius = () => ({
   components: {
     LeButton: Button,
@@ -107,7 +106,6 @@ export const radius = () => ({
   `,
 });
 
-
 export const circleStrokeWidth = () => ({
   components: {
     LeButton: Button,
@@ -123,6 +121,46 @@ export const circleStrokeWidth = () => ({
       <le-button size="small" @click="d += 10">加一点</le-button>
       <le-button size="small" @click="d -= 10">减一点</le-button>
       <le-progress :percentage="d" type="circle" :radius="100" :stroke-width="10"></le-progress>
+    </div>
+  `,
+});
+
+export const circleTextInside = () => ({
+  components: {
+    LeButton: Button,
+    LeProgress: Progress,
+  },
+  data() {
+    return {
+      d: 70,
+    };
+  },
+  template: `      
+    <div style="padding:10px;">
+      <le-button size="small" @click="d += 10">加一点</le-button>
+      <le-button size="small" @click="d -= 10">减一点</le-button>
+      <le-progress :text-inside="true" :percentage="d" type="circle" :radius="100" :stroke-width="10"></le-progress>
+    </div>
+  `,
+});
+
+
+
+export const circlePrimaryColor = () => ({
+  components: {
+    LeButton: Button,
+    LeProgress: Progress,
+  },
+  data() {
+    return {
+      d: 70,
+    };
+  },
+  template: `      
+    <div style="padding:10px;">
+      <le-button size="small" @click="d += 10">加一点</le-button>
+      <le-button size="small" @click="d -= 10">减一点</le-button>
+      <le-progress :text-inside="true" :percentage="d" type="circle" :radius="100" :stroke-width="10" color="cyan"></le-progress>
     </div>
   `,
 });

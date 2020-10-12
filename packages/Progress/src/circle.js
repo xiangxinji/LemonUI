@@ -19,6 +19,7 @@ export default {
     radius: {
       type: Number,
     },
+    color: String,
   },
   watch: {
     percentage: {
@@ -43,8 +44,11 @@ export default {
     return <div class="lemon-progress__circle" style={this.wrapperStyle}>
       <svg class="progress-circle" width="100%" height="100%">
         <circle cx={this.centerPointer.x} cy={this.centerPointer.y} fill="none" stroke="#ccc" r={this.radius} stroke-width={this.strokeWidth} stroke="#efefef" ></circle>
-        <circle style={{ opacity: this.p || 0 }} cx={this.centerPointer.x} cy={this.centerPointer.y} fill="none" stroke="#ccc" r={this.radius} stroke-linecap="round" stroke-width={this.strokeWidth} stroke="skyblue" stroke-dasharray={`${this.sar} ${this.z}`} ></circle>
+        <circle style={{ opacity: this.p || 0 }} cx={this.centerPointer.x} cy={this.centerPointer.y} fill="none" stroke={this.color} r={this.radius} stroke-linecap="round" stroke-width={this.strokeWidth} stroke-dasharray={`${this.sar} ${this.z}`} ></circle>
       </svg>
+      {
+        this.textInside && (<div class="text-inside" style={{ color: this.color }}>{ this.format(this.percentage) }</div>)
+      }
     </div>;
   },
   created() {
