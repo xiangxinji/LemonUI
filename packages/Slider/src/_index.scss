@@ -1,0 +1,22 @@
+.lemon-slider {
+  width: 500px;
+}
+
+.lemon-slider .track {
+  width: 100%;
+  height: 4px;
+  background: #efefef;
+  position: relative;
+}
+.lemon-slider .track .drop-box {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  transform: translate(-10px, calc(-50% + (4px / 2)));
+  opacity: .3;
+}
