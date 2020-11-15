@@ -1,0 +1,50 @@
+
+
+
+.le-popover{
+  position: relative;
+  display: inline-block;
+  .popper-wrapper{
+    position: absolute;
+    height:180px;
+    transform: scaleY(1);
+    transition-property: transform;
+    transform-origin: top;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+  }
+
+  .popper-arrow,.popper-panel{
+    position: absolute;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  }
+  .popper-arrow{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    left: 20px;
+    transform: rotate(45deg);
+  }
+  .popper-panel{
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  &.position-top{
+    .popper-arrow {
+      bottom:-10px;
+    }
+  }
+  &.position-left{
+    .popper-arrow {
+      left: calc(100% - 5px);
+      top:50%;
+    }
+  }
+}
+
